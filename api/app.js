@@ -3,18 +3,22 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
+require('dotenv').config()
 
 // Import Components
 
 
 // Import Routes
+const CityRoute = require('./routes/postCity')
 
 // Envs
-const PORT = 3001 || process.env.PORT
+const PORT = process.env.APP_PORT || 3001
 
 
 // Middleware
 const app = express()
+app.use(cors())
+app.use(bodyParser.json())
 
 const start = async () => {
     try {
@@ -27,5 +31,5 @@ start()
 
 // Setup Routes
 
-
+app.use('/api/weather/', CityRoute)
 
