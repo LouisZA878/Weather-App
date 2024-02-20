@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  width: 100lvw;
+  height: 100lvh;
+  background: linear-gradient(to right,
+  rgb(22,27,95) 0%,
+  rgb(22,27,95) 20%, 
+  rgb(157,145,227) 20%,
+  rgb(157,145,227) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 80lvw;
+  height: 70lvh;
+  background: transparent;
+  border: 5px solid;
+  border-image: linear-gradient(to bottom,
+  rgb(255,255,255),
+    rgb(19,27,90))
+      1;
+  /* box-sizing: none; */
+
+  display: grid;
+  grid-template-columns: repeat(16, 5lvw);
+  grid-template-rows: repeat(14, 5lvh);
+}
+
+.Sidebar {
+  grid-column: 1 / 3;
+  grid-row: 1 / 15;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+}
+.SideLink {
+  box-sizing: border-box;
+  width: 10lvw;
+  height: 7lvh;
+  cursor: pointer;
+
+  border: 6px solid transparent;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.SideLink:hover {
+  border-left: 6px solid rgb(214,215,233);
+}
+.SideLink > .Icon {
+  font-size: 1.7rem;
+  margin: 0 10px 0 10px;
+}
+.SideLink > .Link,.SideLink > .Icon {
+  color: rgb(255,255,255);
+}
+.SideLink > .Link {
+  font-size: 0.7rem;
+}
+
+.Header, .Body{
+  background-color: rgb(255,255,255);
+}
+.Header {
+  grid-column: 3 / 17;
+  grid-row: 1 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(26, 2.5lvw);
+  grid-template-rows: repeat(4, 2.5lvh);
+
+}
+form {
+  grid-column: 1 / 10;
+  grid-row: 2 / 4;
+  border: 1px solid black;
+  padding-left: 10px;
+}
+form input {
+  width: 200px;
+  height: 25px;
+
+  border: 0px;
+  text-align: center;
+
+  background-color: rgb(246,246,246);
+}
+form button {
+  height: 25px;
+  width: 40px;
+  border: 0px;
+  cursor: pointer;
+}
+
+
+
+.Body {
+  grid-column: 3 / 17;
+  grid-row: 3 / 15;
+}
+
